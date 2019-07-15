@@ -1,0 +1,11 @@
+{
+    "name": "vendi-advertising/gravity-forms-acf-field",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Haas",
+            "email": "chris@vendiadvertising.com"
+        }
+    ],
+    "require": {}
+}
