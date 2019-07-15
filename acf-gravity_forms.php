@@ -13,15 +13,16 @@ License URI: http://opensource.org/licenses/MIT
 // $version = 5 and can be ignored until ACF6 exists
 function include_field_types_Gravity_Forms( $version ) {
 
-  include_once('gravity_forms-v5.php');
-
+  require_once __DIR__ . '/gravity_forms-v5.php';
+  new acf_field_gravity_forms();
 }
 
-add_action('acf/include_field_types', 'include_field_types_gravity_forms'); 
+add_action('acf/include_field_types', 'include_field_types_gravity_forms');
 
 
 function register_fields_Gravity_Forms() {
-  include_once('gravity_forms-v4.php');
+  require_once __DIR__ . '/gravity_forms-v4.php';
+  new acf_field_gravity_forms();
 }
 
 add_action('acf/register_fields', 'register_fields_gravity_forms');
@@ -30,19 +31,18 @@ add_action('acf/register_fields', 'register_fields_gravity_forms');
 function gff_activate() {
 
     if (class_exists('RGFormsModel')) {
-			
+
 			return true;
-			
+
 		}	else {
-			
+
 			$html = '<div class="error">';
 				$html .= '<p>';
 					$html .= _e( 'Warning: Gravity Forms is not installed or activated. This plugin does not function without Gravity Forms!' );
 				$html .= '</p>';
 			$html .= '</div>';
 			echo $html;
-			
+
 		}
 }
 register_activation_hook( __FILE__, 'gff_activate' );
-?>
