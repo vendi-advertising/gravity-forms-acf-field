@@ -13,7 +13,7 @@ License URI: http://opensource.org/licenses/MIT
 // $version = 5 and can be ignored until ACF6 exists
 function include_field_types_Gravity_Forms( $version ) {
 
-  require_once __DIR__ . '/gravity_forms-v5.php';
+  require_once __DIR__ . '/src/v5/gravity_forms-v5.php';
   new acf_field_gravity_forms();
 }
 
@@ -21,7 +21,7 @@ add_action('acf/include_field_types', 'include_field_types_gravity_forms');
 
 
 function register_fields_Gravity_Forms() {
-  require_once __DIR__ . '/gravity_forms-v4.php';
+  require_once __DIR__ . '/src/v4/gravity_forms-v4.php';
   new acf_field_gravity_forms();
 }
 
