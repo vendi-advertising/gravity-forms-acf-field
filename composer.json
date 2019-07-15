@@ -7,5 +7,10 @@
             "email": "chris@vendiadvertising.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "files": [
+            "acf-gravity_forms.php"
+        ]
+    }
 }
